@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/responsive.css">
+
+<!-- ChatBot -->
+<link rel="stylesheet" type="text/css" href="css/jquery.convform.css">
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.convform.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<style>
+	body{
+	
+background-color:black;
+	
+}
+</style>
+</head>
+<body>
+	
+<!-- ChatBot -->
+<div class="chat_icon">
+	<i class="fa fa-comments" aria-hidden="true"></i>
+</div>
+
+<div class="chat_box">
+	<div class="my-conv-form-wrapper">
+		<form action="" method="GET" class="hidden">
+
+      <select data-conv-question="Hello! How can I help you" name="category">
+    
+        
+        <option value="complain">How to file a complain?</option>
+        <option value="status">How to check a status?</option>
+      </select>
+
+      <div data-conv-fork="category">
+       <div data-conv-case="complain">
+      <input type="text" name="name" data-conv-question="Please, Enter your name">
+      <input type="text" data-conv-question="Hi {name}, <br> It's a pleasure to meet you. First you have to create an account. After that register your complain by filling a form. Immediate action will be take by the police on your complain." data-no-answer="true">
+
+        </div>
+        <div data-conv-case="status" data-conv-fork="first-question2">
+      <input type="text" name="name" data-conv-question="Please, Enter your name">
+      <input type="text" data-conv-question="Hi {name}, <br> It's a pleasure to meet you.s" data-no-answer="true">
+
+        </div>
+
+
+      </div>
+
+
+
+
+      <select data-conv-question="Thanking You">
+        <option value="Yes">Bye</option>
+      </select>
+
+  	</form>
+	</div>
+</div>
+<!-- ChatBot end -->
+
+<script type="text/javascript">
+	portfolioList = document.querySelectorAll('.portfolio-box');
+	portfolioList.forEach(function(portfolioPic) {
+		portfolioPic.addEventListener('click',function(){
+			bg = this.style.backgroundImage;
+			document.getElementById('port_pop_pic_bg').classList.add("active")
+			document.getElementById('port_pop_pic').style.backgroundImage = bg
+			document.getElementById('port_pop_pic').classList.add("active")
+		});	
+	})
+	document.getElementById('port_pop_pic_bg').addEventListener('click',function(){
+			document.getElementById('port_pop_pic_bg').classList.remove("active")
+			document.getElementById('port_pop_pic').classList.remove("active")
+	})
+</script>
+
+</body>
+</html>
